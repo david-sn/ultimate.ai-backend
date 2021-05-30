@@ -11,7 +11,10 @@ make sure that port 3000 for node server and 27017 mongodb are free and not used
 
 3- Excute ```$ docker-compose up```
 
-4-Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
+4-Enjoy with postman collection from [here](https://www.getpostman.com/collections/26563117f23d59596e50)
+
+5- API Docs [HERE](https://documenter.getpostman.com/view/3227464/TzXzEHdy#51abad2e-9e78-4ebd-979d-749582a0884d)
+
 
 
 ## (B) Manual Installation.
@@ -30,8 +33,9 @@ make sure that port 3000 for node server and 27017 mongodb are free and not used
 
 7- Execute ```$ npm start``` to run the server.
 
-8- Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
+8- Enjoy with postman collection from [here](https://www.getpostman.com/collections/26563117f23d59596e50)
 
+9- API Docs [HERE](https://documenter.getpostman.com/view/3227464/TzXzEHdy#51abad2e-9e78-4ebd-979d-749582a0884d)
 
 
 ***
