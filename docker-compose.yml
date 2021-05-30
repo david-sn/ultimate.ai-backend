@@ -3,14 +3,12 @@ services:
 # NodeJS App
  web:
   image: wakecap
-  container_name: assets-wakecap
+  container_name: ultimate-mongodb
   build: .
   environment:
     NODE_ENV: production
   ports:
    - 3000:3000
-  volumes:
-   - .:/reports
   links:
    - mongodb
   command: npm start
@@ -19,7 +17,7 @@ services:
  # MongoDB
  mongodb:
   image: mongo
-  container_name: assets-mongodb
+  container_name: ultimate-mongodb
   ports:
    - 27017:27017
 

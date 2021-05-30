@@ -1,26 +1,26 @@
-const validation = require('./worker.validate');
+const validation = require('./message.validate');
 const HttpResponsesConst = require('../../constants/http-responses.constants');
 const formatResponse = require('../../constants/response-formate.constants').formatResponse;
 
-const workerService = require('./worker.service');
+const messageService = require('./message.service');
 
 
 
 /**
- * End Point for find all Workers
+ * End Point for send message from customer to ultimate AI
  * @param {*} req 
  * @param {*} res 
  */
-async function getAllWorkers(req, res) {
-	const reqQuery = req.query;
+async function sendMessage(req, res) {
+	const reqBody = req.body;
 
-	const errorRequest = validation.getAllWorkersValidation(reqQuery);
+	const errorRequest = await validation.createMessageValidation(reqBody);
 	if (errorRequest.error) {
 		return formatResponse(res, HttpResponsesConst.BadRequest, errorRequest.error);
 	}
-	workerService.sendUltimateAIRequest(req.body)
-		.then(async workers => {
-			let intentResponse = workers.data.intents
+	messageService.sendUltimateAIRequest(reqBody)
+		.then(async messageIntentResponse => {
+			let intentResponse = messageIntentResponse.data.intents
 			let HigherConfidence = getHigherConfidence(intentResponse);
 			await saveToRepliesDB(req.body, intentResponse, HigherConfidence);
 			formatResponse(res, HttpResponsesConst.OK, HigherConfidence);
@@ -30,7 +30,7 @@ async function getAllWorkers(req, res) {
 
 
 function saveToRepliesDB(requestBody, intents, HigherConfidence) {
-	return workerService.createWorker({
+	return messageService.createMessage({
 		botId: requestBody.botId,
 		message: requestBody.message,
 		intents: intents,
@@ -46,5 +46,5 @@ function getHigherConfidence(intents) {
 }
 
 module.exports = {
-	getAllWorkers
+	sendMessage
 };

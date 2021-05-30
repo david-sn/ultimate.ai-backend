@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
-
-/** This is a worker who send the asset Schcema represent a model worker_details on database. */
-var WorkerDetailsSchema = new mongoose.Schema({  
+var MessageDetailsSchema = new mongoose.Schema({  
     botId: String,
     message: String,
     intents:[{
@@ -18,4 +16,4 @@ var WorkerDetailsSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('worker_details', WorkerDetailsSchema);
+module.exports = mongoose.model('message_details', MessageDetailsSchema);

@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 // eslint-disable-next-line no-unused-vars
 const { mongoose } = require('./config/mongoose');
-const wakeCapRoutes = require('./routes/wakeCap.routes');
+const ultimateRoutes = require('./routes/ultimate.routes');
 
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //load all routes
-wakeCapRoutes.setRoutes(app);
+ultimateRoutes.setRoutes(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

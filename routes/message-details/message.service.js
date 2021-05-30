@@ -1,12 +1,12 @@
 var axios = require('axios');
-const WorkerDetails = require('../../models/WorkerDetails');
+const MessageDetails = require('../../models/MessageDetails');
 /**
- * Save a new Worker to database.
+ * Save a new Messagge to database.
  * 
- * @param {object} workerData - The poroperties of the Worker, ex(name.first, name.last)
+ * @param {object} messageData -
  */
-async function createWorker(workerData) {
-    return WorkerDetails.create(workerData);
+async function createMessage(messageData) {
+    return MessageDetails.create(messageData);
 }
 
 async function sendUltimateAIRequest(data) {
@@ -26,6 +26,6 @@ async function sendUltimateAIRequest(data) {
 
 
 module.exports = {
-    createWorker,
+    createMessage,
     sendUltimateAIRequest
 };
