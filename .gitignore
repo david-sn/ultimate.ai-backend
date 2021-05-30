@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.idea/
+jc-driver.iml
+package-lock.json
+/logs/
+.env
+justclean-backend-driver.iml
+newrelic_agent.log
+/database
