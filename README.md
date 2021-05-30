@@ -1,7 +1,5 @@
-# Welcome To WakeCap Backend Challenge
+# Welcome To Ultimate AI Backend Challenge
 
-## Assumptions
-* Frist Asset every starting day send the duration will be 0.
 
 ## Non-functional requirements
 make sure that port 3000 for node server and 27017 mongodb are free and not used by other apps.
@@ -26,21 +24,14 @@ make sure that port 3000 for node server and 27017 mongodb are free and not used
 
 4- Execute ```$ npm install``` to build project and install required dependencies.
 
-5- Check file ```/{{ProjectDir}}/config/mongoose.js``` if you have custom installation for MongoDB.
+5- Check file ```/{{ProjectDir}}/config/mongoose.js``` if you have custom installation for MongoDB.(next enhance can use .ENV file)
 
-6- Execute ```$./node_modules/.bin/eslint .``` inside ProjectDir to check ESLint syntax.
+6- Execute ```$ npm test``` to run test cases.
 
-7- Execute ```$ npm test``` to run test cases.
+7- Execute ```$ npm start``` to run the server.
 
-8- Execute ```$ npm start``` to run the server.
+8- Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
 
-9- Enjoy with postman collection {{projectDir}}/wakeCap.postman_collection.json attached with project or find it [here](https://www.getpostman.com/collections/d1559ea2b200bd7a3ac3)
-
-* Output of daily reports generated under {{ProjectDir}}/reports directory grouped by Client name. 
-
-***
-
-* Can check routes/reports/report.controller.js functions ```getTimeZoneCode()```,```getLateQueryResult() ```has good business description 
 
 
 ***
@@ -57,47 +48,21 @@ ProjectDirRoot
 │   ├───http-responses.constants.js──────────>>common HTTP Status Code definition 
 │   └───response-formate.constants.js────────>>common Response Template formate
 ├───models/──────────────────────────────────>>contains models schema definitions
-│   ├───AssetsDetails.js─────────────────────>>database Model Schema
-│   ├───ClientDetails.js─────────────────────>>database Model Schema
-│   ├───SiteDetails.js───────────────────────>>database Model Schema
-│   └───WorkerDetails.js─────────────────────>>database Model Schema
+│   └───MessageDetails.js─────────────────────>>database Model Schema
 ├───public/──────────────────────────────────>>auto generate for HTML
 │   ├───images/
 │   ├───javascripts/
 │   └───stylesheets/
 │       └───style.css
-├───reports/─────────────────────────────────>>generate daily reports path
-│   └───Al_Futtaim/──────────────────────────>>client name (dynamic Generated)
-│       └───Khalifa_Tower-1-June-2020.json───>>site name with date
 ├───routes/──────────────────────────────────>>API routes
-│   ├───clients-details/
-│   │   ├───client.controller.js─────────────>>contains logic of end point
-│   │   ├───client.router.js─────────────────>>contains url for end point
-│   │   ├───client.service.js────────────────>>contains database queries
-│   │   └───client.validate.js───────────────>>contains JOI request params validation
-│   ├───reports/
-│   │   ├───report.controller.js─────────────>>contains logic of end point
-│   │   ├───report.router.js─────────────────>>contains url for end point
-│   │   ├───report.service.js────────────────>>contains database queries
-│   │   └───report.validate.js───────────────>>contains JOI request params validation
-│   ├───site-details/
-│   │   ├───site.controller.js───────────────>>contains logic of end point
-│   │   ├───site.router.js───────────────────>>contains url for end point
-│   │   ├───site.service.js──────────────────>>contains database queries
-│   │   └───site.validate.js─────────────────>>contains JOI request params validation
-│   ├───worker-assets/
-│   │   ├───assets.controller.js─────────────>>contains logic of end point
-│   │   ├───assets.router.js─────────────────>>contains url for end point
-│   │   ├───assets.service.js────────────────>>contains database queries
-│   │   └───assets.validate.js───────────────>>contains JOI request params validation
-│   ├───workers-details/
-│   │   ├───worker.controller.js─────────────>>contains logic of end point
-│   │   ├───worker.router.js─────────────────>>contains url for end point
-│   │   ├───worker.service.js────────────────>>contains database queries
-│   │   └───worker.validate.js───────────────>>contains JOI request params validation
-│   └───wakeCap.routes.js────────────────────>>contains registration of all routers files
-├───test/
-│   └───unitTest.js──────────────────────────>>unit test cases
+│   ├───message-details/
+│   │   ├───message.controller.js─────────────>>contains logic of end point
+│   │   ├───message.router.js─────────────────>>contains url for end point
+│   │   ├───message.service.js────────────────>>contains database queries
+│   │   └───message.validate.js───────────────>>contains JOI request params validation
+│   └───ultimate.routes.js────────────────────>>contains registration of all routers files
+├───specs/
+│   └───message.spec.js──────────────────────────>>unit test cases
 ├───views/───────────────────────────────────>>auto generate for frontend
 │   ├───error.jade
 │   ├───index.jade
@@ -110,6 +75,5 @@ ProjectDirRoot
 ├───docker-compose.debug.yml─────────────────>>for debug over docker
 ├───docker-compose.yml───────────────────────>>config for mongodb image and wake-cape node image
 ├───package.json─────────────────────────────>>project libraries and versions
-└───wakeCap.postman_collection.json──────────>>postman collection of all end points
 ```
 Good Chance :)
